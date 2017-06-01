@@ -1,6 +1,13 @@
 # git-hooks
 A list of hooks that I have or will make in future for my daily workflow
 
+## Requirements
+	### Windows
+	 1. python
+	 2. git bash
+	### Linux (not tested yet)
+	 1. python
+
 ## Pre-Commit hook
 This commit will fire up when you type in the command `git commit`. I am
 using this hook to remove the whitespace errors if any, removing them
