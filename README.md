@@ -16,7 +16,7 @@ again.
 
 ### How to install
 
-Rename the file inside  hooks/pre-commit.new.sample to your .git/hooks/pre-commit
+Rename the file inside  `hooks/pre-commit.new.sample` to your `.git/hooks/pre-commit`
 
 ## Tell me about it
 
