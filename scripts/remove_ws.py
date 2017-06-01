@@ -2,8 +2,6 @@
 # pylint: disable=W0105
 
 '''
-Created by ehussmu
-Date: 4/24/13
 Scenarios:
     Remove all the trailing spaces, replacing tabs with standard 4 spaces and replace windows new line with unix new line from the work space
     Remove characters from single file
