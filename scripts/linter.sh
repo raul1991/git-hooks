@@ -26,7 +26,7 @@ else
    for f in $cmd
    do
 	#format using the remove whitespaces command
-	python.exe /c/Users/erahbaw/kaizen/linter/remove_ws.py -f "$f" -c TS TB
+	python remove_ws.py -f "$f" -c TS TB
 	clear
 	echo "White spaces removed - Add files again"
 	exit 1

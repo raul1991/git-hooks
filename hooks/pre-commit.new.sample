@@ -6,4 +6,4 @@
 # it wants to stop the commit.
 #
 # To enable this hook, rename this file to "pre-commit".
-exec ../../kaizen/linter/linter.sh "git status"
+exec ../scripts/linter.sh "git status"
