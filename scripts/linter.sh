@@ -12,13 +12,12 @@ whiteSpaceErrors=$?
 
 git diff --cached --check 
 whiteSpaceErrors=$(($whiteSpaceErrors+$?))
-echo Count = $whiteSpaceErrors
 
 if [ "$whiteSpaceErrors" = 0 ]; then
    clear
    echo "Everything is fine"
    exit 0
 else
-   echo "Remove the whitespace errors"
-   exit 1		
+   echo "Your files contain whitespace errors. To avoid further delay please remove them."
+   exit 1
 fi
