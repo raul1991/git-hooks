@@ -20,7 +20,7 @@ if [ "$whiteSpaceErrors" = 0 ]; then
    exit 0
 else 
    #the cmd that generates a list of file to run the script on
-   cmd=`$output | grep -Eo "([a-zA-Z._/]*/*.(java|xml|py))|([a-zA-Z._/]*/[a-zA-Z./_]*/*.(java|xml|.py))"`
+   cmd=`$output | grep -Eo "^([a-zA-Z._/]*/*\.[a-zA-Z]*)|([a-zA-Z._/]*/[a-zA-Z./_]*/*\.[a-zA-Z]*)"`
 
    #lint every file for spaces and tab spaces.
    for f in $cmd
