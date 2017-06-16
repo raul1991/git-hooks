@@ -10,8 +10,16 @@ output=$1
 git diff --check
 whiteSpaceErrors=$?
 
-git diff --cached --check 
+git diff --cached --check
 whiteSpaceErrors=$(($whiteSpaceErrors+$?))
+
+is_python_installed=$(python --version &> /dev/null)
+
+if [ $? -ne 0 ]; then
+   echo "Python is missing. Please install it or use branch hooks-no-dependency"
+   exit 1
+fi
+
 
 if [ "$whiteSpaceErrors" = 0 ]; then
    clear
