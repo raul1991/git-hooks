@@ -28,15 +28,14 @@ if [ "$whiteSpaceErrors" = 0 ]; then
    exit 0
 else
    #the cmd that generates a list of file to run the script on
-   cmd=`$output | grep -Eo "^([a-zA-Z._/]*/*\.[a-zA-Z]*)|([a-zA-Z._/]*/[a-zA-Z./_]*/*\.[a-zA-Z]*)"`
+   cmd=`$output | grep -Eo "^([-a-zA-Z._/]*/*\.[a-zA-Z]*)|([-a-zA-Z._/]*/[-a-zA-Z./_]*/*\.[a-zA-Z]*)|([-a-zA-Z_./]*/[-a-zA-Z_]*/*\.[a-zA-Z]*)|([-a-zA-Z]{1,}\.[a-zA-Z]{1,})"`
 
    #lint every file for spaces and tab spaces.
    for f in $cmd
    do
     #format using the remove whitespaces command
-    python scripts/remove_ws.py -f "$f" -c TS TB
-    clear
-    echo "White spaces removed - Add files again"
-    exit 1
+    python .git/scripts/remove_ws.py -f "$f" -c TS TB
    done
+   echo "Whitespaces removed. Please add files again"
+   exit 1
 fi
