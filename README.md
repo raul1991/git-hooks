@@ -1,23 +1,20 @@
 # git-hooks
-A list of hooks that I have or will make in future for my daily workflow
+A list of hooks that I have or will make in future for my daily development workflow
 
 ## Requirements
-	### Windows
-	 1. python
-	 2. git bash
-	### Linux (not tested yet)
-	 1. python
+
+##### Windows
+	
+	 	1. python
+	 	2. git bash
+		
+##### Linux (not tested yet)
+	 	1. python
 
 ## Pre-Commit hook
-This commit will fire up when you type in the command `git commit`. I am
-using this hook to remove the whitespace errors if any, removing them
-and failing the commit allowing the user to add the now modified files
-again.
-
+This hook is fired up by GIT everytime you `commit`. Whenever you code contains white-spaces this hook would prevent it from going into the upstream branch and fix it for you. Your work after that would be just to add the "affected files" again into git.
 ### How to install
-
-Rename the file inside  `hooks/pre-commit.new.sample` to your `.git/hooks/pre-commit`
+Run this command -> `./init.sh`
 
 ## Tell me about it
-
 Put in your issues in [here](https://github.com/raul1991/git-hooks/issues "pre-commit hook")
