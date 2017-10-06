@@ -2,11 +2,13 @@
 #env variables
 export GIT_DIR=".git"
 
+DEBUG=$1
 bool_glob=false
 backup_dir="backup"
 scripts_dir="scripts"
 hooks_dir="hooks"
 existing_hooks=[]
+
 function check_dir
 {
   if [ -d $1 ]; then
@@ -15,6 +17,15 @@ function check_dir
     bool_glob=false
   fi
 
+}
+
+function log
+{
+  if [ $DEBUG == 0 ];then
+          echo $1 &> /dev/null
+  else
+          echo $1
+  fi
 }
 
 function start_script
@@ -52,7 +63,7 @@ function search_existing_hooks
        do
        ls $GIT_DIR/$hooks_dir/$hook &> /dev/null
            if [ $hook == $sample ]; then
-           echo "Found the following hook $hook"
+           log "Found the following hook $hook"
            echo "Do you want to replace this hook ? (y/n)"
            read choice
 
@@ -69,7 +80,7 @@ function search_existing_hooks
 function backup_exiting_hooks
 {
    check_dir $GIT_DIR/$backup_dir
-   echo $bool_glob
+   log $bool_glob
    if !( $bool_glob ); then
        echo "Creating the backup dir"
        mkdir $GIT_DIR/$backup_dir
