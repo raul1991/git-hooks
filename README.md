@@ -22,3 +22,8 @@ This hook is fired up by GIT everytime you `commit`. Whenever you commit your co
 
 ## Tell me about it
 Put in your issues in [here](https://github.com/raul1991/git-hooks/issues "pre-commit hook")
+
+## Suggestions for contributions
+- Discuss new hook features you would want to see. Use features as a label for it.
+- Restructuring of the project. Do you not like how the files are kept. Raise [issues](https://github.com/raul1991/git-hooks/issues). Use arch as a label for it.
+- Readme or wiki pages should be updated ? Talk about it on the issues page and use documentation as a label for it.
