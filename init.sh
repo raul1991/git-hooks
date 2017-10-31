@@ -23,7 +23,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '
-source './b-log/b-log.sh'
+GIT_HOOKS_DIR=$(which init.sh | awk '{split($0,arr,"/init.sh"); print arr[1]};');
+source "$GIT_HOOKS_DIR/b-log/b-log.sh"
 : '
 LOG_LEVEL_OFF    : 0
 LOG_LEVEL_FATAL  : 100
@@ -40,7 +41,6 @@ B_LOG --log-level -1
 
 REPOGITDIR=$(git rev-parse --git-dir 2> /dev/null)
 GIT_DIR=".git"
-GIT_HOOKS_DIR=$(which init.sh | awk '{split($0,arr,"/init.sh"); print arr[1]};');
 DEBUG=$1
 bool_glob=false
 backup_dir="backup"
